@@ -9,13 +9,18 @@ from .serializer import ProductSerializer, CategorySerializer
 
 @api_view()
 def productList(request):
-    queryset = Product.objects.all()
+    queryset = Product.objects.prefetch_related('categories').all()
     category_filter = request.query_params.get('categories')
+    price_filter = request.query_params.get('price')
 
     if category_filter:
         category_ids = [int(category_id)
                         for category_id in category_filter.split(',')]
         queryset = queryset.filter(categories__in=category_ids).distinct()
+
+    print(price_filter)
+    if price_filter:
+        queryset = queryset.filter(price__lte=int(price_filter))
 
     serializer = ProductSerializer(queryset, many=True)
     return Response(serializer.data)

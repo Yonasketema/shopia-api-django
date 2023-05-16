@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 
 from .models import Product, Category
-from .serializer import ProductSerializer, CategorySerializer
+from .serializer import ProductListSerializer, CategorySerializer, ProductDetailSerializer
+
+
+class ProductDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.prefetch_related('categories').all()
+    serializer_class = ProductDetailSerializer
 
 
 @api_view()
@@ -22,7 +28,7 @@ def productList(request):
     if price_filter:
         queryset = queryset.filter(price__lte=int(price_filter))
 
-    serializer = ProductSerializer(queryset, many=True)
+    serializer = ProductListSerializer(queryset, many=True)
     return Response(serializer.data)
 
 

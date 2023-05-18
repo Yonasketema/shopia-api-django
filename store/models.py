@@ -8,6 +8,11 @@ class Category(models.Model):
         return self.title
 
 
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to='images/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
@@ -15,6 +20,7 @@ class Product(models.Model):
     last_update = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField(Category)
     image_uri = models.CharField(max_length=255)
+    product_images = models.ManyToManyField(ProductImage)
 
     def __str__(self):
         return self.title

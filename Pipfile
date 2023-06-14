@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 pillow = "*"
+drf-nested-routers = "*"
 
 [dev-packages]
 

@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 pillow = "*"
 drf-nested-routers = "*"
+whitenoise = "*"
 
 [dev-packages]
 

@@ -11,6 +11,8 @@ pillow = "*"
 drf-nested-routers = "*"
 whitenoise = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
 
 [dev-packages]
 

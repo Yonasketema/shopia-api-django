@@ -10,6 +10,7 @@ django-cors-headers = "*"
 pillow = "*"
 drf-nested-routers = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 

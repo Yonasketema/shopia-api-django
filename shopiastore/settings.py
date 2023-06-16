@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-mlk4p80p^v&*kdy@2(3s6%1)2w^b$a(mn$-97x-mse43&)@a7d
 DEBUG = True
 
 ALLOWED_HOSTS = ["shopia-api-django-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ['https://shopia-api-django-production.up.railway.app']
 
 
 # Application definition

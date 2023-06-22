@@ -118,8 +118,25 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
+    "https://shopia-et.vercel.app",
     "http://localhost:8080",
     "http://127.0.0.1:9000",
     "http://localhost:5173",
-    "https://shopia-et.vercel.app"
 ]
+
+CORS_ALLOW_METHODS = (
+    "GET",
+)
+
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:5000',
+)

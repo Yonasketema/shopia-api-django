@@ -132,5 +132,5 @@ CORS_ALLOW_METHODS = [
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-   'https://shopia-et.vercel.app/',
+   'http://shopia-et.vercel.app/',
 )

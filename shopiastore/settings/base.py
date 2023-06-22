@@ -141,7 +141,3 @@ CORS_ALLOW_HEADERS = (
 )
 
 
-
-CORS_ORIGIN_WHITELIST = (
-   'https://shopia-et.vercel.app/',
-)

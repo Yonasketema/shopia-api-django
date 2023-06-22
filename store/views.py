@@ -35,7 +35,7 @@ def productList(request):
     return Response(serializer.data)
 
 
-class ProductReviewView(CreateAPIView,  RetrieveAPIView):
+class ProductReviewView(CreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
@@ -47,4 +47,11 @@ class ProductReviewView(CreateAPIView,  RetrieveAPIView):
 def categoryList(request):
     queryset = Category.objects.all()
     serializer = CategorySerializer(queryset, many=True)
+    return Response(serializer.data)
+
+
+@api_view()
+def ReviewList(request, id):
+    queryset = Review.objects.filter(product_id=id)
+    serializer = ReviewSerializer(queryset, many=True)
     return Response(serializer.data)

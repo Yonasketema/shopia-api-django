@@ -117,20 +117,4 @@ REST_FRAMEWORK = {
     "COERCE_DECIMAL_TO_STRING": False,
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "https://shopia-et.vercel.app",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    "http://localhost:5173",
-]
-
-CORS_ALLOW_METHODS = [
-    "GET",
-]
-
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_ALLOW_ALL = False
-
-CORS_ORIGIN_WHITELIST = (
-   'https://shopia-et.vercel.app',
-)
+CORS_ORIGIN_ALLOW_ALL = True 

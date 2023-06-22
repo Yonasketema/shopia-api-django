@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView
+
+from rest_framework.generics import CreateAPIView, RetrieveAPIView
 
 
 from .models import Product, Category, Review
@@ -33,7 +35,7 @@ def productList(request):
     return Response(serializer.data)
 
 
-class ProductReview(ListCreateAPIView):
+class ProductReviewView(CreateAPIView,  RetrieveAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
